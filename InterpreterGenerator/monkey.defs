@@ -1,0 +1,10 @@
+(def print (assoc
+ input (assoc p string)
+ monkey "Print p"
+))
+
+(def load-image (assoc
+ input (assoc p string)
+ monkey "LoadImage(p)
+ 	Print p"
+))
