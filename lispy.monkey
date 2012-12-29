@@ -1,6 +1,6 @@
 #rem 
 
-Very simple lispy (syntax And code wise) parser in the Monkey programming.
+Very simple lispy (syntax And code wise) parser in the Monkey programming language.
 
 Usage: 
 
