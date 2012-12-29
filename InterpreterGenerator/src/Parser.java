@@ -96,10 +96,8 @@ public class Parser {
 					break;
 					
 				case ')': // we are going out of an expression if ... 
+				case ' ': 
 					if (!instr && incomment == 0) { // ... we are not in a string
-						if (n.parent == null) {
-							// ? 
-						}
 						
 						if (blit.trim().length() > 0) {
 							if(n.value == null) {
@@ -111,22 +109,10 @@ public class Parser {
 						}
 						
 						blit = "";
-						n = n.parent; 
-						
-						continue;
-					}
-					break;
-				case ' ':
-					if (!instr && incomment == 0) {
-						if (blit.trim().length()>0) {
-							if (n.value == null) {
-								n.value = blit.trim();
-								n.type = Parser.TYPE_FUNC; 
-							} else {
-								n.kids.add(new Node(blit.trim(), n.parent, Parser.TYPE_LIT));
-							}
+						if (this.code.charAt(i) == ')') {
+							n = n.parent; 
 						}
-						blit = "";
+						
 						continue;
 					}
 					break;
