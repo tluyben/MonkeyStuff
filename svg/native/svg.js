@@ -3062,7 +3062,7 @@ function drawSVGMonkey(s, x, y, w, h, img) {
 		surface.gc=canvas.getContext( '2d' );
 	
 		surface.gc.drawSvg(s, x, y, w, h);
-		console.log(surface);
+
 		return surface;
 	}
 }
